@@ -36,6 +36,7 @@ defmodule GistGrouper.Web do
       alias GistGrouper.Repo
       import Ecto
       import Ecto.Query
+      import GistGrouper.CurrentUserPlug
 
       import GistGrouper.Router.Helpers
       import GistGrouper.Gettext

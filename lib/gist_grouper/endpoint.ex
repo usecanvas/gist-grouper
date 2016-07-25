@@ -36,7 +36,10 @@ defmodule GistGrouper.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_gist_grouper_key",
-    signing_salt: "1V5pLR+J"
+    signing_salt: "1V5pLR+J",
+    domain: System.get_env("HOST"),
+    http_only: true,
+    secure: System.get_env("MIX_ENV") == :prod
 
   plug GistGrouper.Router
 end

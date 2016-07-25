@@ -1,0 +1,1 @@
+<a href="<%= github_login_url %>">Log in with GitHub</a>

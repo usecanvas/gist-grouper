@@ -7,19 +7,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello GistGrouper!</title>
+    <title>GistGrouper</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
     <div class="container">
-      <header class="header">
+      <header class="page-header">
+        <h1 class="pull-left">GistGrouper</h1>
+
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <%= if @current_user do %>
+              <li><a href="<%= auth_path(@conn, :logout) %>">Log out</a></li>
+            <% else %>
+              <li><a href="<%= auth_path(@conn, :login) %>">Log in</a></li>
+            <% end %>
           </ul>
         </nav>
-        <span class="logo"></span>
+        <div class="clearfix"></div>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
