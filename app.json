@@ -1,0 +1,31 @@
+{
+  "name": "gist-grouper",
+  "description": "An app for grouping GitHub gists with Medium blog posts",
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    { "url": "https://github.com/HashNuke/heroku-buildpack-elixir" },
+    { "url": "https://github.com/gjaldon/heroku-buildpack-phoenix-static" }
+  ],
+  "env": {
+    "DB_POOL_SIZE": {
+      "description": "Size of the database connection pool",
+      "required": false
+    },
+    "HOST": {
+      "description": "The host used for building app links",
+      "development_require1d": false
+    },
+    "MIX_ENV": {
+      "description": "The environment in which to run the app",
+      "value": "prod",
+      "development_required": false
+    },
+    "SECRET_KEY_BASE": {
+      "description": "A secret key for encryption/signing",
+      "development_require1d": false,
+      "generator": "secret"
+    }
+  }
+}
