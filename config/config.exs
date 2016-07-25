@@ -7,7 +7,9 @@ use Mix.Config
 
 # General application configuration
 config :gist_grouper,
-  ecto_repos: [GistGrouper.Repo]
+  ecto_repos: [GistGrouper.Repo],
+  github_client_id: System.get_env("GITHUB_CLIENT_ID"),
+  github_client_secret: System.get_env("GITHUB_CLIENT_SECRET")
 
 # Configures the endpoint
 config :gist_grouper, GistGrouper.Endpoint,

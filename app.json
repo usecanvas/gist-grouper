@@ -13,6 +13,12 @@
       "description": "Size of the database connection pool",
       "required": false
     },
+    "GITHUB_CLIENT_ID": {
+      "description": "A client ID for a GitHub app"
+    },
+    "GITHUB_CLIENT_SECRET": {
+      "description": "A client secret for a GitHub app"
+    },
     "HOST": {
       "description": "The host used for building app links",
       "development_require1d": false
