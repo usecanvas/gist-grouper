@@ -19,6 +19,7 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <%= if @current_user do %>
+              <li><a href="<%= post_path(@conn, :index) %>">Posts</a></li>
               <li><a href="<%= auth_path(@conn, :logout) %>">Log out</a></li>
             <% else %>
               <li><a href="<%= auth_path(@conn, :login) %>">Log in</a></li>

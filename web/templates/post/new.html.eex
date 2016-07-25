@@ -1,0 +1,23 @@
+<h1>New Post</h1>
+
+<%= unless @changeset.valid? do %>
+  <div class="alert alert-danger" role="alert">
+    <p>There was an error saving your post, see below.</p>
+  </div>
+<% end %>
+
+<%= form_for @changeset, post_path(@conn, :create), fn f -> %>
+  <div class="form-group">
+    <%= label f, :medium_id, "Medium ID" %>
+    <%= text_input f, :medium_id, placeholder: "Medium ID", class: "form-control" %>
+    <%= error_tag f, :medium_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :medium_title, "Title" %>
+    <%= text_input f, :medium_title, placeholder: "Title", class: "form-control" %>
+    <%= error_tag f, :medium_title %>
+  </div>
+
+  <%= submit "Submit", class: "btn btn-default" %>
+<% end %>

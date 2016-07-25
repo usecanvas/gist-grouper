@@ -26,7 +26,7 @@ defmodule GistGrouper.Router do
     get "/logout", AuthController, :logout
     get "/oauth/github/callback", AuthController, :callback
 
-    resources "/posts", PostController, only: [:index]
+    resources "/posts", PostController, only: [:new, :create, :index, :show, :delete]
   end
 
   # Other scopes may use custom stacks.

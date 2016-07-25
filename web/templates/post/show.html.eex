@@ -1,0 +1,8 @@
+<h1><%= @post.medium_title %> <small><code><%= @post.medium_id %></code></small></h1>
+
+<%= link "Delete", to: post_path(@conn, :delete, @post),
+                   method: :delete,
+                   data: [confirm: "Are you sure you want to delete this post?"],
+                   class: "btn btn-danger" %>
+
+<h2>Gists</h2>
