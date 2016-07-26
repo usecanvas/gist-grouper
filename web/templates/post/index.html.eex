@@ -1,13 +1,9 @@
 <h1>Posts</h1>
 
-<a href="<%= post_path(@conn, :new) %>" class="btn btn-default">New Post</a>
+<%= link "New Post", to: post_path(@conn, :new), class: "btn btn-default" %>
 
 <ul>
   <%= for post <- @posts do %>
-    <li>
-      <a href="<%= post_path(@conn, :show, post) %>">
-        <%= post.medium_title %>
-      </a>
-    </li>
+    <li><%= link post.medium_title, to: post_path(@conn, :show, post) %></li>
   <% end %>
 </ul>

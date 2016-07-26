@@ -1,1 +1,1 @@
-<a href="<%= github_login_url %>">Log in with GitHub</a>
+<%= link "Log in with GitHub", to: github_login_url %>

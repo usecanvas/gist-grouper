@@ -19,10 +19,10 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <%= if @current_user do %>
-              <li><a href="<%= post_path(@conn, :index) %>">Posts</a></li>
-              <li><a href="<%= auth_path(@conn, :logout) %>">Log out</a></li>
+              <li><%= link "Posts", to: post_path(@conn, :index) %></li>
+              <li><%= link "Log out", to: auth_path(@conn, :logout) %></li>
             <% else %>
-              <li><a href="<%= auth_path(@conn, :login) %>">Log in</a></li>
+              <li><%= link "Log in", to: auth_path(@conn, :login) %></li>
             <% end %>
           </ul>
         </nav>
